@@ -7,6 +7,8 @@ import Header from "@/components/Header";
 import ProjectGrid from "@/components/ProjectGrid";
 import LibraryGrid from "@/components/LibraryGrid";
 import LegislativeHub from "@/components/LegislativeHub";
+import { paymentConfig } from "@/config/payments";
+import { Lock } from "lucide-react";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -86,9 +88,19 @@ export default function Home() {
 
             {/* Sovereignty Footer */}
             <footer className="border-t border-white/5 py-12 px-6">
-              <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="text-zinc-500 text-[10px] tracking-[0.3em] uppercase font-serif">
-                  © 2026 Randolph Pelican III LLC
+              <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+                <div className="flex flex-col items-center md:items-start gap-4">
+                  <div className="text-zinc-500 text-[10px] tracking-[0.3em] uppercase font-serif">
+                    © 2026 Randolph Pelican III LLC
+                  </div>
+                  {/* Direct Contact */}
+                  <a 
+                    href={`mailto:${paymentConfig.SUPPORT_EMAIL}`}
+                    className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-600 hover:text-[#FFD700] transition-colors"
+                  >
+                    <Lock size={12} className="text-[#FFD700]/50" />
+                    Secure Channel: {paymentConfig.SUPPORT_EMAIL}
+                  </a>
                 </div>
                 
                 <motion.div 

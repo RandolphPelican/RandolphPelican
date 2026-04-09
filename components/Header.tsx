@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Lock } from "lucide-react";
 import MascotHeader from "./MascotHeader";
+import { paymentConfig } from "@/config/payments";
 
 const navLinks = [
   { name: "Research", href: "#research" },
@@ -52,6 +53,16 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Direct Contact Link */}
+            <a 
+              href={`mailto:${paymentConfig.SUPPORT_EMAIL}`}
+              className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] uppercase tracking-widest text-zinc-400 hover:text-[#FFD700] hover:border-[#FFD700]/30 transition-all duration-300"
+            >
+              <Lock size={10} className="text-[#FFD700]" />
+              Secure Channel
+            </a>
+
             {/* Mascot Walking Along the Floor */}
             <MascotHeader />
           </nav>

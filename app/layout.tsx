@@ -10,10 +10,10 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   title: "Randolph Pelican III | Sovereign Research & Tech",
-  description: "Official hub for K-Metric analysis, Substrate Affect Theory, and decentralized software solutions.",
+  description: "Official portal for K-Metric analysis, Substrate Affect Theory, and decentralized sovereign software.",
   openGraph: {
     title: "Randolph Pelican III | Sovereign Research & Tech",
-    description: "Official hub for K-Metric analysis and decentralized software solutions.",
+    description: "Official portal for K-Metric analysis and decentralized sovereign software.",
     url: "https://randolphpelican.com",
     siteName: "Randolph Pelican III LLC",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Randolph Pelican III | Sovereign Research & Tech",
-    description: "Official hub for K-Metric analysis and decentralized software solutions.",
+    description: "Official portal for K-Metric analysis and decentralized sovereign software.",
     images: ["/og-image.png"],
   },
 };
