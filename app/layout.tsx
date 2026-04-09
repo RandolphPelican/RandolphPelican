@@ -9,8 +9,30 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "Randolph Pelican III",
-  description: "Cinematic Portfolio Intro",
+  title: "Randolph Pelican III | Sovereign Research & Tech",
+  description: "Official hub for K-Metric analysis, Substrate Affect Theory, and decentralized software solutions.",
+  openGraph: {
+    title: "Randolph Pelican III | Sovereign Research & Tech",
+    description: "Official hub for K-Metric analysis and decentralized software solutions.",
+    url: "https://randolphpelican.com",
+    siteName: "Randolph Pelican III LLC",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Randolph Pelican III - Sovereign Research",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Randolph Pelican III | Sovereign Research & Tech",
+    description: "Official hub for K-Metric analysis and decentralized software solutions.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

@@ -10,9 +10,31 @@ import LegislativeHub from "@/components/LegislativeHub";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const handleIntroComplete = () => {
+    setIsTransitioning(true);
+    // Brief artificial delay for a smooth "loading" feel
+    setTimeout(() => {
+      setShowIntro(false);
+      setIsTransitioning(false);
+    }, 500);
+  };
 
   return (
     <main className="relative min-h-screen bg-[#050505]">
+      {isTransitioning && (
+        <div className="fixed inset-0 z-[60] bg-[#050505] flex items-center justify-center">
+          <motion.div
+            animate={{ opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="text-[#FFD700] font-serif tracking-[0.5em] uppercase text-xs"
+          >
+            Establishing Sovereignty...
+          </motion.div>
+        </div>
+      )}
+
       <AnimatePresence mode="wait">
         {showIntro ? (
           <motion.div
@@ -20,7 +42,7 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
           >
-            <CinematicIntro onComplete={() => setShowIntro(false)} />
+            <CinematicIntro onComplete={handleIntroComplete} />
           </motion.div>
         ) : (
           <motion.div
@@ -62,14 +84,29 @@ export default function Home() {
               <LegislativeHub />
             </section>
 
-            {/* Footer */}
+            {/* Sovereignty Footer */}
             <footer className="border-t border-white/5 py-12 px-6">
-              <div className="container mx-auto flex justify-between items-center text-zinc-500 text-xs tracking-widest uppercase">
-                <p>© 2026 Randolph Pelican III LLC</p>
-                <div className="flex gap-6">
-                  <span className="hover:text-white cursor-pointer transition-colors">Twitter</span>
-                  <span className="hover:text-white cursor-pointer transition-colors">LinkedIn</span>
-                  <span className="hover:text-white cursor-pointer transition-colors">GitHub</span>
+              <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="text-zinc-500 text-[10px] tracking-[0.3em] uppercase font-serif">
+                  © 2026 Randolph Pelican III LLC
+                </div>
+                
+                <motion.div 
+                  whileHover={{ textShadow: "0 0 8px rgba(255,215,0,0.5)", color: "#FFD700" }}
+                  className="text-zinc-600 text-[10px] tracking-[0.4em] uppercase font-serif transition-colors cursor-default"
+                >
+                  Built for Sovereign Minds.
+                </motion.div>
+
+                <div className="flex gap-8">
+                  {['Twitter', 'LinkedIn', 'GitHub'].map((social) => (
+                    <span 
+                      key={social}
+                      className="text-zinc-500 text-[10px] tracking-widest uppercase hover:text-white cursor-pointer transition-colors"
+                    >
+                      {social}
+                    </span>
+                  ))}
                 </div>
               </div>
             </footer>
@@ -79,3 +116,4 @@ export default function Home() {
     </main>
   );
 }
+

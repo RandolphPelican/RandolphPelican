@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects, Project } from "@/data/projects";
+import { siteConfig } from "@/data/config";
 import InteractiveMic from "./InteractiveMic";
 
 const sizeClasses = {
@@ -36,11 +37,15 @@ export default function ProjectGrid() {
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           className="w-full"
         >
-          <Link href="/donate" className="block w-full">
-            <button className="w-full py-6 rounded-2xl bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700] text-[#050505] font-serif font-bold text-xl tracking-wider shadow-xl transition-transform hover:scale-[1.02] active:scale-[0.98]">
+          <a href={siteConfig.donationUrl} target="_blank" className="block w-full">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98, filter: "brightness(1.1)" }}
+              className="w-full py-6 rounded-2xl bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700] text-[#050505] font-serif font-bold text-xl tracking-wider shadow-xl transition-all duration-300 active:shadow-inner"
+            >
               Grant / Donate
-            </button>
-          </Link>
+            </motion.button>
+          </a>
         </motion.div>
       </div>
     </div>
