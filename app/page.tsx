@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import CinematicIntro from "@/components/CinematicIntro";
 import Header from "@/components/Header";
 import ProjectGrid from "@/components/ProjectGrid";
+import LibraryGrid from "@/components/LibraryGrid";
+import LegislativeHub from "@/components/LegislativeHub";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -29,9 +31,35 @@ export default function Home() {
           >
             <Header />
 
-            {/* Dynamic Research & Software Bento Grid */}
-            <section className="container mx-auto px-6 py-24 min-h-screen">
+            {/* Research & Software Section */}
+            <section id="research" className="container mx-auto px-6 py-24">
+              <div className="mb-16">
+                <h2 className="text-4xl font-serif font-bold text-white mb-4">Research & Software</h2>
+                <div className="w-24 h-1 bg-[#FFD700] rounded-full" />
+              </div>
               <ProjectGrid />
+            </section>
+
+            {/* Library Section */}
+            <section id="library" className="container mx-auto px-6 py-24 bg-gradient-to-b from-transparent via-zinc-900/10 to-transparent">
+              <div className="mb-16 text-center">
+                <h2 className="text-4xl font-serif font-bold text-white mb-4">The Sovereign Library</h2>
+                <p className="text-zinc-500 max-w-2xl mx-auto">
+                  Archives of foundational knowledge and published literature on digital autonomy.
+                </p>
+              </div>
+              <LibraryGrid />
+            </section>
+
+            {/* Legislative Hub Section */}
+            <section id="laws" className="container mx-auto px-6 py-24">
+              <div className="mb-16 text-center">
+                <h2 className="text-4xl font-serif font-bold text-white mb-4 tracking-tight uppercase">Legislative Hub</h2>
+                <p className="text-zinc-500 max-w-2xl mx-auto">
+                  Your portal to civic action. Connect with representatives to advocate for the Sovereign Digital Autonomy Act.
+                </p>
+              </div>
+              <LegislativeHub />
             </section>
 
             {/* Footer */}
