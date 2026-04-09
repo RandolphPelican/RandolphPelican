@@ -4,23 +4,21 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Starfield from "./Starfield";
 
-export default function CinematicIntro() {
+export default function CinematicIntro({ onComplete }: { onComplete: () => void }) {
   const introRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLHeadingElement>(null);
   const lightRedRef = useRef<HTMLDivElement>(null);
   const lightGoldRef = useRef<HTMLDivElement>(null);
   const lightGreenRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const tl = gsap.timeline({
       onComplete: () => {
-        // Optional: Trigger reveal of landing page
         gsap.to(introRef.current, {
           y: "-100%",
           duration: 1.5,
           ease: "power4.inOut",
-          onComplete: () => setIsVisible(false),
+          onComplete: onComplete,
         });
       },
     });
@@ -75,12 +73,7 @@ export default function CinematicIntro() {
     // We add a small delay to let the viewer soak it in
     tl.to({}, { duration: 2 }); 
 
-    return () => {
-      tl.kill();
-    };
-  }, []);
-
-  if (!isVisible) return null;
+  }, [onComplete]);
 
   return (
     <div
