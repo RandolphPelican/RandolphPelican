@@ -57,21 +57,18 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
       2.5
     );
 
-    // Subtle "Metallic Swirl" or sheen movement
-    tl.to(
-      logoRef.current,
-      {
-        backgroundPosition: "200% center",
-        duration: 4,
-        ease: "none",
-        repeat: -1,
-      },
-      2.5
-    );
-
     // 5s: Fade out or slide up is handled by the timeline's onComplete or a final step
     // We add a small delay to let the viewer soak it in
-    tl.to({}, { duration: 2 }); 
+    tl.to({}, { duration: 2 });
+
+    // Standalone infinite sheen animation — runs independently so it doesn't block the timeline's onComplete
+    gsap.to(logoRef.current, {
+      backgroundPosition: "200% center",
+      duration: 4,
+      ease: "none",
+      repeat: -1,
+      delay: 2.5,
+    });
 
   }, [onComplete]);
 
