@@ -43,7 +43,7 @@ export default function InteractiveMic({ title, description, href }: Interactive
           {/* Metallic Sheen Effect */}
           <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
-          <span className="text-xs font-serif font-bold tracking-widest text-[#FFD700] uppercase drop-shadow-sm">
+          <span className="text-xs font-sans font-bold tracking-widest text-[#FFD700] uppercase drop-shadow-sm">
             {title}
           </span>
           <ExternalLink size={12} className="text-zinc-500 group-hover:text-white transition-colors" />

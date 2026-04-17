@@ -7,8 +7,8 @@ import MascotHeader from "./MascotHeader";
 import { paymentConfig } from "@/config/payments";
 
 const navLinks = [
-  { name: "Research", href: "#research" },
   { name: "Software", href: "#software" },
+  { name: "Research", href: "#research" },
   { name: "Laws", href: "#laws" },
   { name: "Library", href: "#library" },
 ];

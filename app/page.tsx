@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CinematicIntro from "@/components/CinematicIntro";
 import Header from "@/components/Header";
-import ProjectGrid from "@/components/ProjectGrid";
+import { SoftwareGrid, ResearchGrid } from "@/components/ProjectGrid";
 import LibraryGrid from "@/components/LibraryGrid";
 import LegislativeHub from "@/components/LegislativeHub";
 import { paymentConfig } from "@/config/payments";
@@ -56,24 +56,22 @@ export default function Home() {
           >
             <Header />
 
-            {/* Research & Software Section */}
-            <section id="research" className="container mx-auto px-6 py-24">
+            {/* Software for Sale Section */}
+            <section id="software" className="container mx-auto px-6 py-24">
               <div className="mb-16">
-                <h2 className="text-4xl font-serif font-bold text-white mb-4">Research & Software</h2>
+                <h2 className="text-4xl font-serif font-bold text-white mb-4">Software for Sale</h2>
                 <div className="w-24 h-1 bg-[#FFD700] rounded-full" />
               </div>
-              <ProjectGrid />
+              <SoftwareGrid />
             </section>
 
-            {/* Library Section */}
-            <section id="library" className="container mx-auto px-6 py-24 bg-gradient-to-b from-transparent via-zinc-900/10 to-transparent">
-              <div className="mb-16 text-center">
-                <h2 className="text-4xl font-serif font-bold text-white mb-4">The Sovereign Library</h2>
-                <p className="text-zinc-500 max-w-2xl mx-auto">
-                  Archives of foundational knowledge and published literature on digital autonomy.
-                </p>
+            {/* Research & Publications Section */}
+            <section id="research" className="container mx-auto px-6 py-24">
+              <div className="mb-16">
+                <h2 className="text-4xl font-serif font-bold text-white mb-4">Research & Publications</h2>
+                <div className="w-24 h-1 bg-[#FFD700] rounded-full" />
               </div>
-              <LibraryGrid />
+              <ResearchGrid />
             </section>
 
             {/* Legislative Hub Section */}
@@ -85,6 +83,17 @@ export default function Home() {
                 </p>
               </div>
               <LegislativeHub />
+            </section>
+
+            {/* Library Section */}
+            <section id="library" className="container mx-auto px-6 py-24 bg-gradient-to-b from-transparent via-zinc-900/10 to-transparent">
+              <div className="mb-16 text-center">
+                <h2 className="text-4xl font-serif font-bold text-white mb-4">The Sovereign Library</h2>
+                <p className="text-zinc-500 max-w-2xl mx-auto">
+                  Archives of foundational knowledge and published literature on digital autonomy.
+                </p>
+              </div>
+              <LibraryGrid />
             </section>
 
             {/* Sovereignty Footer */}
