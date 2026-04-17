@@ -8,6 +8,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 import LibraryGrid from "@/components/LibraryGrid";
 import LegislativeHub from "@/components/LegislativeHub";
 import { paymentConfig } from "@/config/payments";
+import { siteConfig } from "@/data/config";
 import { Lock } from "lucide-react";
 
 export default function Home() {
@@ -111,13 +112,20 @@ export default function Home() {
                 </motion.div>
 
                 <div className="flex gap-8">
-                  {['Twitter', 'LinkedIn', 'GitHub'].map((social) => (
-                    <span 
-                      key={social}
+                  {[
+                    { name: 'Twitter', url: siteConfig.socials.twitter },
+                    { name: 'LinkedIn', url: siteConfig.socials.linkedin },
+                    { name: 'GitHub', url: siteConfig.socials.github },
+                  ].map(({ name, url }) => (
+                    <a
+                      key={name}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-zinc-500 text-[10px] tracking-widest uppercase hover:text-white cursor-pointer transition-colors"
                     >
-                      {social}
-                    </span>
+                      {name}
+                    </a>
                   ))}
                 </div>
               </div>

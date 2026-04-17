@@ -3,7 +3,7 @@ export const siteConfig = {
   socials: {
     twitter: "https://twitter.com/randolphpelican",
     linkedin: "https://linkedin.com/in/randolphpelican",
-    github: "https://github.com/randolphpelican",
+    github: "https://github.com/RandolphPelican",
   },
   analytics: {
     enabled: true,
