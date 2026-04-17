@@ -25,7 +25,7 @@ function ProjectCard({ project, children }: { project: Project; children: React.
         </span>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 pt-20">
         <h3 className="text-2xl font-serif font-bold tracking-tight">
           {project.title}
         </h3>
@@ -104,7 +104,7 @@ export function SoftwareGrid() {
               Available Soon
             </button>
             <p className="text-center text-[10px] text-zinc-600 tracking-wide">
-              Launching with StableTech Enterprises LLC
+              Launching with Randolph Pelican III LLC
             </p>
           </div>
         </ProjectCard>
