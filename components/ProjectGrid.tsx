@@ -17,22 +17,22 @@ const colorClasses: Record<string, string> = {
 
 function ProjectCard({ project, children }: { project: Project; children: React.ReactNode }) {
   return (
-    <div className="md:col-span-2 group relative p-8 md:p-10 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] bg-zinc-900/30 backdrop-blur-md overflow-hidden flex flex-col justify-end transition-all duration-700 hover:border-[#FFD700]/30 hover:shadow-[0_0_50px_rgba(255,215,0,0.05)]">
-      {/* Icon */}
-      <div className={`absolute top-8 left-8 md:top-10 md:left-10 w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center border ${colorClasses[project.color || "default"]}`}>
-        <span className="font-serif text-xl text-[#FFD700]">
-          {project.icon.charAt(0)}
-        </span>
-      </div>
+    <div className="md:col-span-2 group relative p-8 md:p-10 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] bg-zinc-900/30 backdrop-blur-md overflow-hidden transition-all duration-700 hover:border-[#FFD700]/30 hover:shadow-[0_0_50px_rgba(255,215,0,0.05)]">
+      <div className="flex flex-col h-full gap-4">
+        {/* Icon */}
+        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center border ${colorClasses[project.color || "default"]}`}>
+          <span className="font-serif text-xl text-[#FFD700]">
+            {project.icon.charAt(0)}
+          </span>
+        </div>
 
-      <div className="space-y-4 pt-20">
-        <h3 className="text-2xl font-serif font-bold tracking-tight">
-          {project.title}
-        </h3>
-        <p className="text-zinc-500 text-sm leading-relaxed">
-          {project.description}
-        </p>
-        <div className="pt-2">
+        <div className="mt-auto space-y-3">
+          <h3 className="text-2xl font-serif font-bold tracking-tight">
+            {project.title}
+          </h3>
+          <p className="text-zinc-500 text-sm leading-relaxed">
+            {project.description}
+          </p>
           {children}
         </div>
       </div>
